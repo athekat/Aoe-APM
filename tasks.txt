@@ -1,0 +1,8 @@
+
+
+Conseguir los MatchId para cada player. Guardarlo en json.
+
+
+Triggerear los analisis a partir de los json.
+
+Utilizar el nuevo json generado de analisis (link amazon) para sacar y armar tabla de apm. 
