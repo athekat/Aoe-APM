@@ -15,11 +15,12 @@ def get_player_ratings(api_url, player_name):
         matches = data.get("matches", [])
 
         match_info = []
-        for match in matches:
+        for match in matches[:5]: #Only last 5 matches
             matchId = match.get("matchId", [])
-
+            started = match.get("started")
             match_info.append({
                 "matchId": match["matchId"],
+                "started_date": datetime.strptime(started, "%Y-%m-%dT%H:%M:%S.%fZ").strftime("%Y-%m-%d %H:%M"),
             })
         # print(match_info)
         return match_info

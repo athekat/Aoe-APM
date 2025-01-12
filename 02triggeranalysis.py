@@ -30,7 +30,7 @@ def trigger_analysis(match_ids_file):
             response = requests.get(url)
 
             if response.status_code == 200:
-                print(f"Match ID {match_id}: Analysis triggered successfully.")
+                print(f"{playername}'s Match ID {match_id}: Analysis triggered successfully.")
                 # Process response if needed:
                 # print(response.text)
                 # data = response.json()
@@ -45,8 +45,17 @@ def trigger_analysis(match_ids_file):
         except requests.exceptions.RequestException as e:
             print(f"Match ID {match_id}: An error occurred: {e}")
 
-        time.sleep(2)
+        time.sleep(5)
 
 if __name__ == "__main__":
-    match_ids_file = "Nanox_matchesId.json" # Replace with your json file name
-    trigger_analysis(match_ids_file)
+    players = [
+    {"name": "Carpincho", "api_url": "https://data.aoe2companion.com/api/matches?profile_ids=6446904&search=&page=1"},
+    {"name": "Nanox", "api_url": "https://data.aoe2companion.com/api/matches?profile_ids=439001&search=&page=1"},
+    {"name": "dicopatito", "api_url": "https://data.aoe2companion.com/api/matches?profile_ids=6237950&search=&page=1"},
+    {"name": "Sir Monkey", "api_url": "https://data.aoe2companion.com/api/matches?profile_ids=903496&search=&page=1"}
+]
+   
+    for player in players:
+        playername = player["name"]
+        match_ids_file = f"{playername}_matchesId.json" # Replace with your json file name
+        trigger_analysis(match_ids_file)
