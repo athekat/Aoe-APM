@@ -13,7 +13,6 @@ players = [
 
 # Define the URL of the JSON data
 
-url = "https://raw.githubusercontent.com/athekat/Aoe-APM/refs/heads/main/dicopatito_matches_with_apm.json"
 for player in players:
     playername = player["name"]
     url = player["url"]
@@ -29,8 +28,12 @@ for player in players:
         print(f"Error decoding JSON: {e}")
         exit()
 
+      # Sort the data by date in descending order (most recent first)
+    data.sort(key=lambda x: x["started_date"], reverse=True)
+
     dates = []
     apm_values = []
+    
     for match in data[:50]:
         if "mean_apm" in match:  
             dates.append(match["started_date"])
