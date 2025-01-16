@@ -33,7 +33,7 @@ def get_player_mean_apm_from_data(data, player_name):
       return apm_data.get(player_id)  
   return None
 
-output_file = "Carpincho_matches_with_apm.json"
+output_file = ""
 output_data = []
 
 # Load list of matches from JSON file
@@ -57,13 +57,13 @@ for player in players:
   with open(f"{playername}_matchesId.json", "r") as f:
     matches = json.load(f)
 
-  for match in matches:
+  for match in matches: #cambiar a 5?
     match_id = match["matchId"]
     
-    # Check if the match ID already exists in the output data
-    #if match_id in existing_match_ids:
-    #    print(f"Match {match_id} already processed. Skipping.")
-    #    continue  # Skip to the next match
+    # # Check if the match ID already exists in the output data
+    # if match_id in existing_match_ids:
+    #     print(f"Match {match_id} already processed. Skipping.")
+    #     continue  # Skip to the next match
     
     data_url = f"https://aoe2insights.s3.amazonaws.com/media/public/matches/analysis/analysis-{match_id}.json"
     player_name = playername  # Update with your desired player
@@ -86,9 +86,9 @@ for player in players:
     existing_match_ids.add(match_id)  
     time.sleep(5)
 
-  # Save output to a new JSON file
-  filename = f"{playername}_matches_with_apm.json"
-  with open(filename, "w") as f:
-    json.dump(output_data, f, indent=4)  
-
+    # Save output to a new JSON file
+    filename = f"{playername}_matches_with_apm.json"
+    with open(filename, "w") as f:
+      json.dump(output_data, f, indent=4)  
+  output_data = []
   print(f"{playername}'s APM data saved to json file.")
