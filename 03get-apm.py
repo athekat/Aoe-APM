@@ -61,9 +61,9 @@ for player in players:
     match_id = match["matchId"]
     
     # Check if the match ID already exists in the output data
-    if match_id in existing_match_ids:
-        print(f"Match {match_id} already processed. Skipping.")
-        continue  # Skip to the next match
+    #if match_id in existing_match_ids:
+    #    print(f"Match {match_id} already processed. Skipping.")
+    #    continue  # Skip to the next match
     
     data_url = f"https://aoe2insights.s3.amazonaws.com/media/public/matches/analysis/analysis-{match_id}.json"
     player_name = playername  # Update with your desired player
