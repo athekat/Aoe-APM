@@ -28,35 +28,5 @@
         "started_date": "2025-01-10 21:41",
         "player_name": "Nanox",
         "mean_apm": 32.85
-    },
-    {
-        "matchId": 364408688,
-        "started_date": "2025-01-10 20:54",
-        "player_name": "Nanox",
-        "mean_apm": 38.67
-    },
-    {
-        "matchId": 364399218,
-        "started_date": "2025-01-10 20:14",
-        "player_name": "Nanox",
-        "mean_apm": 33.14
-    },
-    {
-        "matchId": 364391635,
-        "started_date": "2025-01-10 19:42",
-        "player_name": "Nanox",
-        "mean_apm": 34.22
-    },
-    {
-        "matchId": 363498519,
-        "started_date": "2025-01-06 15:00",
-        "player_name": "Nanox",
-        "mean_apm": 35.52
-    },
-    {
-        "matchId": 363485649,
-        "started_date": "2025-01-06 13:46",
-        "player_name": "Nanox",
-        "mean_apm": 34.52
     }
 ]
