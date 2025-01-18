@@ -17,9 +17,7 @@ jobs:
       - name: Run Python script
         run: |
           python 01getmachtlist.py
-          python 02triggeranalysis.py
-          python 03get-apm.py
-          python 04makeapmchart.py
+
           
       - name: Commit changes
         run: |
